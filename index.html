@@ -2,115 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Sachin kaundal">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ravi Classes - Empowering Students for Success</title>
+    <meta name="description" content="Ravi Classes - Personalized coaching for Mathematics, Science, Competitive Exams, and more in Dehra Kangra. Empowering students for academic success.">
+    <link rel="icon" type="image/png" href="assets/fav.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .hero-bg {
-            /* Updated placeholder to be more descriptive */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1200x800/3B82F6/FFFFFF?text=Students+Engaged+in+Learning');
-            background-size: cover;
-            background-position: center;
-        }
-        .cta-button {
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .section-title {
-            border-bottom: 3px solid #4F46E5; /* Indigo-600 */
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        /* Custom modal styles */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 10% auto; /* 10% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            max-width: 500px;
-            border-radius: 0.5rem;
-            text-align: center;
-        }
-        .modal-close-button {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .modal-close-button:hover,
-        .modal-close-button:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .testimonial-img {
-            max-height: 400px; /* constrain image height */
-            object-fit: cover; /* ensure image covers the area nicely */
-        }
-    </style>
+    <link href="styles.css" rel="stylesheet">
+   
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white shadow-lg sticky top-0 z-50 rounded-b-xl">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600">Ravi Classes</a>
-            <div class="space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-indigo-600">About</a>
-                <a href="#courses" class="text-gray-600 hover:text-indigo-600">Courses</a>
-                <a href="#why-us" class="text-gray-600 hover:text-indigo-600">Why Us</a>
-                <a href="#testimonials" class="text-gray-600 hover:text-indigo-600">Testimonials</a>
-                <a href="#contact" class="text-gray-600 hover:text-indigo-600">Contact</a>
+            <a href="#" class="flex items-center text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition-colors duration-300">
+                <img src="assets/logo_main.png" alt="Ravi Classes Logo" class="h-8 w-8 mr-2 rounded-full"> <!-- Add your logo path here -->
+                Ravi Classes
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-300">About</a>
+                <a href="#courses" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-300">Courses</a>
+                <a href="#why-us" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-300">Why Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-300">Contact</a>
             </div>
+            <button id="mobile-menu-button" aria-label="Open mobile menu" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
         </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md rounded-b-lg py-2">
+            <a href="#about" class="block px-6 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700">About</a>
+            <a href="#courses" class="block px-6 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700">Courses</a>
+            <a href="#why-us" class="block px-6 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700">Why Us</a>
+            <a href="#contact" class="block px-6 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700">Contact</a>
+        </div>
     </header>
 
-    <section class="hero-bg text-white py-20 md:py-32">
+    <section class="hero-bg text-white py-20 md:py-32 flex items-center justify-center min-h-[60vh] rounded-b-xl">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Unlock Your Potential. Achieve Your Dreams.</h1>
-            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Expert guidance and personalized coaching at Ravi Classes to help you excel in your studies and beyond.</p>
-            <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg text-lg cta-button inline-block">Enroll Now</a>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">Unlock Your Potential. Achieve Your Dreams.</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">Expert guidance and personalized coaching at Ravi Classes to help you excel in your studies and beyond.</p>
+            <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 inline-block">Enroll Now</a>
         </div>
     </section>
 
-    <section id="about" class="py-16 md:py-24 bg-white">
+    <section id="about" class="py-16 md:py-24 bg-white rounded-xl shadow-inner my-8 mx-auto max-w-7xl">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 section-title mx-auto">About Us</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 pb-2 border-b-4 border-indigo-600 inline-block mx-auto section-title">About Us</h2>
             <p class="text-center text-gray-600 mb-12 text-lg">Your partners in academic excellence.</p>
             <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x400/10B981/FFFFFF?text=Modern+Classroom+Facility" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/969696?text=Image+Not+Found';" 
-                         alt="Modern and bright classroom environment at Ravi Classes" 
-                         class="rounded-lg shadow-xl w-full h-auto">
+                    <img src="assets/student.jpeg" 
+                         onerror="this.onerror=null;this.src='assets/student.jpeg'" 
+                         alt="Modern and bright digital classroom environment at Ravi Classes" 
+                         class="rounded-xl shadow-xl w-full h-auto">
                 </div>
-                <div class="md:w-1/2 text-gray-700 text-lg">
+                <div class="md:w-1/2 text-gray-700 text-lg leading-relaxed">
                     <p class="mb-4">Welcome to Ravi Classes, where we are dedicated to providing top-quality education and fostering a supportive learning environment. Our mission is to empower students with the knowledge, skills, and confidence they need to succeed academically and in life.</p>
                     <p class="mb-4">Founded with a passion for teaching, we believe in a personalized approach. We understand that every student is unique, and our experienced educators tailor their methods to meet individual learning styles and goals.</p>
                     <p>Join us and become part of a community committed to growth and achievement.</p>
@@ -119,63 +66,63 @@
         </div>
     </section>
 
-    <section id="courses" class="py-16 md:py-24 bg-indigo-50">
+    <section id="courses" class="py-16 md:py-24 bg-indigo-50 rounded-xl shadow-inner my-8 mx-auto max-w-7xl">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 section-title mx-auto">Our Courses</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 pb-2 border-b-4 border-indigo-600 inline-block mx-auto section-title">Our Courses</h2>
             <p class="text-center text-gray-600 mb-12 text-lg">Tailored programs for every need.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-lg feature-card">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 feature-card">
                     <img src="https://placehold.co/100x100/A5B4FC/3730A3?text=Math" 
                          onerror="this.onerror=null;this.src='https://placehold.co/100x100/cccccc/969696?text=Icon';" 
                          alt="Mathematics Icon" class="mx-auto mb-6 h-20 w-20 rounded-full">
                     <h3 class="text-2xl font-semibold text-indigo-700 mb-3 text-center">Mathematics (IX-XII)</h3>
                     <p class="text-gray-600 text-center">Comprehensive coaching for board exams and competitive tests. Building strong foundational concepts.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg feature-card">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 feature-card">
                     <img src="https://placehold.co/100x100/A5B4FC/3730A3?text=Science" 
                          onerror="this.onerror=null;this.src='https://placehold.co/100x100/cccccc/969696?text=Icon';"
                          alt="Science Icon" class="mx-auto mb-6 h-20 w-20 rounded-full">
                     <h3 class="text-2xl font-semibold text-indigo-700 mb-3 text-center">Science (IX-X)</h3>
                     <p class="text-gray-600 text-center">Physics, Chemistry, and Biology explained with practical examples and interactive sessions.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg feature-card">
-                    <img src="https://placehold.co/100x100/A5B4FC/3730A3?text=Commerce" 
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 feature-card">
+                    <img src="https://placehold.co/100x100/A5B4FC/3730A3?text=Physics" 
                          onerror="this.onerror=null;this.src='https://placehold.co/100x100/cccccc/969696?text=Icon';"
                          alt="Commerce Icon" class="mx-auto mb-6 h-20 w-20 rounded-full">
-                    <h3 class="text-2xl font-semibold text-indigo-700 mb-3 text-center">Commerce (XI-XII)</h3>
-                    <p class="text-gray-600 text-center">In-depth understanding of Accountancy, Business Studies, and Economics for future entrepreneurs.</p>
+                    <h3 class="text-2xl font-semibold text-indigo-700 mb-3 text-center">Physics (XI-XII)</h3>
+                    <p class="text-gray-600 text-center">In-depth understanding of concepts. Specialized coaching for competitive exams</p>
                 </div>
-                 <div class="bg-white p-8 rounded-lg shadow-lg feature-card">
-                    <img src="https://placehold.co/100x100/A5B4FC/3730A3?text=Test+Prep" 
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 feature-card">
+                    <img src="https://placehold.co/100x100/A5B4FC/3730A3?text=Coaching" 
                          onerror="this.onerror=null;this.src='https://placehold.co/100x100/cccccc/969696?text=Icon';"
-                         alt="Test Prep Icon" class="mx-auto mb-6 h-20 w-20 rounded-full">
+                         alt="Test Preparation Icon" class="mx-auto mb-6 h-20 w-20 rounded-full">
                     <h3 class="text-2xl font-semibold text-indigo-700 mb-3 text-center">Competitive Exam Prep</h3>
-                    <p class="text-gray-600 text-center">Specialized batches for JEE, NEET, CLAT, and other competitive entrance examinations.</p>
+                    <p class="text-gray-600 text-center">Specialized batches for JEE, NEET and other competitive entrance examinations.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg feature-card">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 feature-card">
                     <img src="https://placehold.co/100x100/A5B4FC/3730A3?text=Spoken+English" 
                          onerror="this.onerror=null;this.src='https://placehold.co/100x100/cccccc/969696?text=Icon';"
                          alt="Spoken English Icon" class="mx-auto mb-6 h-20 w-20 rounded-full">
                     <h3 class="text-2xl font-semibold text-indigo-700 mb-3 text-center">Spoken English</h3>
                     <p class="text-gray-600 text-center">Improve fluency, pronunciation, and confidence with our interactive English speaking courses.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg feature-card">
-                    <img src="https://placehold.co/100x100/A5B4FC/3730A3?text=Coding" 
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 feature-card">
+                    <img src="https://placehold.co/100x100/A5B4FC/3730A3?text=School" 
                          onerror="this.onerror=null;this.src='https://placehold.co/100x100/cccccc/969696?text=Icon';"
-                         alt="Coding Icon" class="mx-auto mb-6 h-20 w-20 rounded-full">
-                    <h3 class="text-2xl font-semibold text-indigo-700 mb-3 text-center">Basic Coding Skills</h3>
-                    <p class="text-gray-600 text-center">Introduction to programming concepts for young minds. Python, Scratch, and Web Basics.</p>
+                         alt="Residential School Icon" class="mx-auto mb-6 h-20 w-20 rounded-full">
+                    <h3 class="text-2xl font-semibold text-indigo-700 mb-3 text-center">Residential School Exams</h3>
+                    <p class="text-gray-600 text-center">Specialized batches for Navodaya, Military School and other entrance exams.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="why-us" class="py-16 md:py-24 bg-white">
+    <section id="why-us" class="py-16 md:py-24 bg-white rounded-xl shadow-inner my-8 mx-auto max-w-7xl">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 section-title mx-auto">Why Choose Us?</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 pb-2 border-b-4 border-indigo-600 inline-block mx-auto section-title">Why Choose Us?</h2>
             <p class="text-center text-gray-600 mb-12 text-lg">The advantages of learning with Ravi Classes.</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="flex items-start space-x-4 p-6 rounded-lg hover:bg-indigo-50 transition-colors duration-300">
+                <div class="flex items-start space-x-4 p-6 rounded-xl bg-gray-50 hover:bg-indigo-50 transition-colors duration-300 shadow-md">
                     <div class="flex-shrink-0">
                         <svg class="w-12 h-12 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m0 0A8.001 8.001 0 004 17.747M12 17.747A8.001 8.001 0 0020 17.747M12 6.253A3.5 3.5 0 0115.5 2.753L12 6.253zM12 6.253A3.5 3.5 0 008.5 2.753L12 6.253z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 10.25h9M7.5 13.75h9"></path></svg>
                     </div>
@@ -184,7 +131,7 @@
                         <p class="text-gray-600">Our teachers are highly qualified, passionate, and have years of experience in their respective fields.</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-4 p-6 rounded-lg hover:bg-indigo-50 transition-colors duration-300">
+                <div class="flex items-start space-x-4 p-6 rounded-xl bg-gray-50 hover:bg-indigo-50 transition-colors duration-300 shadow-md">
                     <div class="flex-shrink-0">
                         <svg class="w-12 h-12 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
@@ -193,7 +140,7 @@
                         <p class="text-gray-600">We maintain small batch sizes to ensure each student gets individual focus and support.</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-4 p-6 rounded-lg hover:bg-indigo-50 transition-colors duration-300">
+                <div class="flex items-start space-x-4 p-6 rounded-xl bg-gray-50 hover:bg-indigo-50 transition-colors duration-300 shadow-md">
                     <div class="flex-shrink-0">
                         <svg class="w-12 h-12 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
@@ -202,7 +149,7 @@
                         <p class="text-gray-600">Our students consistently achieve excellent results in their exams and secure admissions to top institutions.</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-4 p-6 rounded-lg hover:bg-indigo-50 transition-colors duration-300">
+                <div class="flex items-start space-x-4 p-6 rounded-xl bg-gray-50 hover:bg-indigo-50 transition-colors duration-300 shadow-md">
                     <div class="flex-shrink-0">
                         <svg class="w-12 h-12 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.874 15.235A7.5 7.5 0 0012 18.75a7.5 7.5 0 007.126-3.515M12 6.75V12.75m0 0L9 10.5m3 2.25l3-2.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
@@ -211,7 +158,7 @@
                         <p class="text-gray-600">Well-researched and updated study materials that cover the entire syllabus effectively.</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-4 p-6 rounded-lg hover:bg-indigo-50 transition-colors duration-300">
+                <div class="flex items-start space-x-4 p-6 rounded-xl bg-gray-50 hover:bg-indigo-50 transition-colors duration-300 shadow-md">
                     <div class="flex-shrink-0">
                         <svg class="w-12 h-12 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     </div>
@@ -220,7 +167,7 @@
                         <p class="text-gray-600">Frequent tests and mock exams to track progress and identify areas for improvement.</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-4 p-6 rounded-lg hover:bg-indigo-50 transition-colors duration-300">
+                <div class="flex items-start space-x-4 p-6 rounded-xl bg-gray-50 hover:bg-indigo-50 transition-colors duration-300 shadow-md">
                     <div class="flex-shrink-0">
                         <svg class="w-12 h-12 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.03 10.03L12 12.06l-2.03-2.03m4.06 4.06L12 11.94l-2.03 2.03"></path></svg>
                     </div>
@@ -233,34 +180,9 @@
         </div>
     </section>
 
-    <section id="testimonials" class="py-16 md:py-24 bg-indigo-50">
+    <section id="contact" class="py-16 md:py-24 bg-white rounded-xl shadow-inner my-8 mx-auto max-w-7xl">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 section-title mx-auto">What Our Students Say</h2>
-            <p class="text-center text-gray-600 mb-12 text-lg">Stories of success from those who've learned with us.</p>
-            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 bg-white p-8 rounded-lg shadow-xl">
-                <div class="md:w-1/3">
-                     <img src="https://placehold.co/400x300/FBBF24/FFFFFF?text=Happy+Successful+Students" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/969696?text=Image+Not+Found';" 
-                         alt="Happy students celebrating their success at Ravi Classes" 
-                         class="rounded-lg shadow-md w-full h-auto testimonial-img">
-                </div>
-                <div class="md:w-2/3 space-y-6">
-                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
-                        <p class="text-gray-700 italic mb-3">"Ravi Classes helped me understand complex topics easily. The teachers are amazing and always ready to help. I scored 95% in my boards!"</p>
-                        <p class="font-semibold text-indigo-600">- Priya Sharma, Class XII</p>
-                    </div>
-                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
-                        <p class="text-gray-700 italic mb-3">"The competitive exam preparation here is top-notch. I cleared my entrance exam on the first attempt thanks to their guidance and rigorous practice sessions."</p>
-                        <p class="font-semibold text-indigo-600">- Rohan Verma, JEE Aspirant</p>
-                    </div>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 section-title mx-auto">Get In Touch</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 pb-2 border-b-4 border-indigo-600 inline-block mx-auto section-title">Get In Touch</h2>
             <p class="text-center text-gray-600 mb-12 text-lg">We're here to answer your questions. Reach out to us!</p>
             <div class="max-w-3xl mx-auto bg-gray-50 p-8 md:p-12 rounded-xl shadow-2xl">
                 <form id="contactForm">
@@ -287,88 +209,97 @@
                         <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-10 rounded-lg text-lg cta-button">Send Message</button>
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">Send Message on WhatsApp</button>
                     </div>
                 </form>
                 <div class="mt-12 text-center">
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Or Visit Us At:</h3>
-                    <p class="text-gray-600 text-lg">123 Education Lane, Learning City, Knowledge State - 141001</p>
-                    <p class="text-gray-600 text-lg">Phone: +91-9876543210</p>
-                    <p class="text-gray-600 text-lg">Email: info@raviclasses.com</p> </div>
+                    <p class="text-gray-600 text-lg">opposite Post Office Dehra Kangra</p>
+                    <p class="text-gray-600 text-lg">Phone: +91-8219583049</p>
+                    <p class="text-gray-600 text-lg">Email: info@raviclasses.com</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-gray-300 py-12">
+    <footer class="bg-gray-800 text-gray-300 py-12 rounded-t-xl">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; <span id="currentYear"></span> Ravi Classes. All Rights Reserved.</p>
             <p class="text-sm mt-2">Designed with care for your success. </p>
         </div>
     </footer>
 
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close-button" onclick="closeModal()">&times;</span>
-            <h2 class="text-2xl font-semibold text-green-600 mb-4">Message Sent!</h2>
-            <p class="text-gray-700">Thank you for contacting us. We will get back to you shortly.</p>
-            <button onclick="closeModal()" class="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg">Close</button>
-        </div>
-    </div>
-
     <script>
-        // Set current year in footer
+        // Set current year in footer dynamically
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetElement = document.querySelector(this.getAttribute('href'));
+                e.preventDefault(); // Prevent default anchor click behavior
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     targetElement.scrollIntoView({
-                        behavior: 'smooth'
+                        behavior: 'smooth' // Smooth scrolling effect
                     });
+                    // Close mobile menu after clicking a link
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
                 }
             });
         });
 
-        // Contact form submission
-        const contactForm = document.getElementById('contactForm');
-        const successModal = document.getElementById('successModal');
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        if(contactForm && successModal) {
-            contactForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
-
-                // In a real application, you would send the form data to a server here.
-                // For this demo, we'll just show the success modal.
-                console.log('Form submitted with the following data:');
-                const formData = new FormData(contactForm);
-                for (let [key, value] of formData.entries()) {
-                    console.log(key + ': ' + value);
-                }
-                
-                // Show the success modal
-                successModal.style.display = 'block';
-                contactForm.reset(); // Reset the form fields
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden'); // Toggle visibility of mobile menu
             });
         }
 
+        // Contact form submission handling for WhatsApp
+        const contactForm = document.getElementById('contactForm');
 
-        // Function to close the modal
-        function closeModal() {
-            if(successModal) {
-                successModal.style.display = 'none';
-            }
-        }
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
 
-        // Close modal if user clicks outside of it
-        window.onclick = function(event) {
-            if (event.target == successModal) {
-                closeModal();
-            }
+                // Get form data
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                // Construct the WhatsApp message
+                let whatsappMessage = `Hello Ravi Classes!%0A`;
+                whatsappMessage += `My name is ${name}.%0A`;
+                whatsappMessage += `Email: ${email}%0A`;
+                if (phone) {
+                    whatsappMessage += `Phone: ${phone}%0A`;
+                }
+                whatsappMessage += `Subject: ${subject}%0A`;
+                whatsappMessage += `Message: ${message}%0A%0A`;
+                whatsappMessage += `I would like to know more about your courses.`;
+
+                // WhatsApp number (replace with the actual number for Ravi Classes)
+                const whatsappNumber = '918219583049'; // Indian number format without '+'
+
+                // Construct the WhatsApp URL
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+                // Open WhatsApp in a new tab/window
+                window.open(whatsappUrl, '_blank');
+
+                contactForm.reset(); // Reset the form fields after submission
+            });
         }
     </script>
-
+    <script src="main.js"></script>
 </body>
 </html>
