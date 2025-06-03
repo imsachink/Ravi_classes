@@ -1,0 +1,15 @@
+/* Apply 'Inter' font globally */
+body {
+    font-family: 'Inter', sans-serif;
+}
+/* Custom background for the hero section, combines gradient with a placeholder image */
+.hero-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/main.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+/* Specific style for testimonial image to ensure consistent sizing */
+.testimonial-img {
+    max-height: 400px; /* constrain image height */
+    object-fit: cover; /* ensure image covers the area nicely */
+}
